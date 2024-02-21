@@ -31,15 +31,17 @@ import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.util.MimeTypeUtils.IMAGE_JPEG_VALUE;
 
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/user")
 @RequiredArgsConstructor
-public class UserController {
+//@CrossOrigin("http://localhost:4200")
+public class UserController extends ExceptionHandling {
     public static final String EMAIL_SENT = "An email with a new password was sent to: ";
     public static final String USER_DELETED_SUCCESSFULLY = "User deleted successfully";
     private final UserService userService;
     private final JwtProvider jwtProvider;
     private final AuthenticationManager authenticationManager;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody User user) {
         authenticate(user.getUsername(), user.getPassword());

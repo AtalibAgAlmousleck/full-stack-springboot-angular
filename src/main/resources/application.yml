@@ -1,7 +1,6 @@
 jwt:
   secret: 'eyJSb2xlIjoiQWXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY3NjgyNTIyMywiaWF0IjoxNjc2ODI1MjIzfQ'
 
-
 spring:
   datasource:
     url: jdbc:postgresql://localhost/users_jwt
@@ -24,3 +23,4 @@ server:
     include-message: always
     include-binding-errors: always
     include-stacktrace: on_param
+  port: 8081
