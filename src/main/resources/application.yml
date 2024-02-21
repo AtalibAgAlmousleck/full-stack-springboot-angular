@@ -1,0 +1,26 @@
+jwt:
+  secret: 'eyJSb2xlIjoiQWXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY3NjgyNTIyMywiaWF0IjoxNjc2ODI1MjIzfQ'
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/users_jwt
+    username: postgres
+    password: Admin
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param
